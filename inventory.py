@@ -4,3 +4,6 @@ class Inventory:
     
     def get_contents(self):
         return self.contents
+    
+    def add_contents(self, item, quantity):
+        self.contents
