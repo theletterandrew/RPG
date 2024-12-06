@@ -1,2 +1,2 @@
 # RPG
- A text based RPG.
+The backbone for an RPG system.
