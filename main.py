@@ -52,3 +52,10 @@ print(player.inventory.add_item(dagger))
 # Check item quantity
 print(player.inventory.get_item_quantity(dagger))
 
+# Check player health and if alive
+print(player.get_current_health())
+print(player.check_alive())
+
+# Subtract player health and check current health
+player.sub_health(25)
+print(player.get_current_health())
