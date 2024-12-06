@@ -9,6 +9,7 @@ class Inventory:
 
     def add_gold(self, quantity=1):
         self.gold += quantity
+        return True
     
     def sub_gold(self, quantity=1):
         if quantity > self.gold:
@@ -16,6 +17,9 @@ class Inventory:
         else:
             self.gold -=quantity
             return True
+    
+    def get_gold(self):
+        return self.gold
 
     def add_item(self, item, quantity=1):
         if len(self.contents) + quantity > self.size:
@@ -35,3 +39,6 @@ class Inventory:
         else:
             self.contents[item] -= quantity
             return True
+    
+    def get_inventory_size(self):
+        return len(self.contents)
