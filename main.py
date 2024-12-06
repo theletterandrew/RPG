@@ -17,7 +17,8 @@ potion = Item('Health Potion', 1, 15, 'Drink this for more health.')
 
 
 # Create a new player object------------
-player = Player('Andrew', 5, 'Rogue')
+player = Player('Andrew', 5, 100, 'Rogue')
+# print(player.get_health())
 # print(player.get_name())
 # print(player.get_player_class())
 
