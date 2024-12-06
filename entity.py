@@ -1,12 +1,10 @@
 from inventory import Inventory
 
 class Entity:
-    def __init__(self, name, inventory):
+    def __init__(self, name, inv_size):
         self.name = name
-        if inventory is not None:
-            self.inventory = inventory
-        else:
-            self.inventory = Inventory()
+        self.inv_size = inv_size
+        self.inventory = Inventory(self.inv_size)
     
     def get_name(self):
         return self.name
