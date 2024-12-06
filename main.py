@@ -35,10 +35,19 @@ print(player.inventory.get_inventory_size())
 print(player.inventory.add_gold(50))
 print(player.inventory.get_gold())
 
-# print(player.inventory.get_contents())
 # returns a dictionary of objects in inventory
+print(player.inventory.get_contents())
 
+player.print_inventory()
+print(player.inventory.get_value())
 
-# iterate through dictionary of objects in inventory and print name of item, description, and item weight
-for item in player.inventory.get_contents():
-    print(item.get_name(), item.get_description(), item.get_weight())
+# Delete item from inventory-------
+print(player.inventory.remove_item(cloak))
+player.print_inventory()
+
+# Add an extra dagger to see if it shows up
+print(player.inventory.add_item(dagger))
+
+# Check item quantity
+print(player.inventory.get_item_quantity(dagger))
+

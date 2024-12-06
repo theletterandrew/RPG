@@ -14,3 +14,11 @@ class Entity:
 
     def get_inventory(self):
         return self.inventory
+
+    def print_inventory(self):
+        print('-----Inventory-----')
+        for item in self.inventory.get_contents():
+            print('Name: ' + item.get_name())
+            print('Description: ' + item.get_description())
+            print('Weight: ' + str(item.get_weight()))
+            print('Value: ' + str(item.get_value()))

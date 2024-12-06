@@ -3,6 +3,7 @@ class Inventory:
         self.contents = {}
         self.size = size
         self.gold = 0
+        self.value = 0
     
     def get_contents(self):
         return self.contents
@@ -27,8 +28,10 @@ class Inventory:
         
         if item in self.contents:
             self.contents[item] += quantity
+            self.value += item.get_value()
         else:
             self.contents[item] = quantity
+            self.value += item.get_value()
         return True
 
     def remove_item(self, item, quantity=1):
@@ -38,7 +41,19 @@ class Inventory:
             return False
         else:
             self.contents[item] -= quantity
+            self.value -= item.get_value()
+            if self.contents[item] == 0:
+                del self.contents[item]
             return True
     
     def get_inventory_size(self):
         return len(self.contents)
+
+    def get_value(self):
+        return self.value
+    
+    def get_item_quantity(self, item):
+        if not item in self.contents.keys():
+            return None
+        else:
+            return self.contents[item]
