@@ -25,6 +25,7 @@ class Entity:
             print('Description: ' + item.get_description())
             print('Weight: ' + str(item.get_weight()))
             print('Value: ' + str(item.get_value()))
+            print('--------------------')
 
     def get_max_health(self):
         return self.max_health
