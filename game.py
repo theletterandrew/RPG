@@ -1,14 +1,17 @@
 from item import Item
+from weapon import Weapon
 
 class Game:
 
     def new_game(self):
+        # create some weapons
+        self.spear = Weapon('Spear', 5.4, 15, "Long and pointy.", 10)
+        self.dagger = Weapon('Dagger', 2.0, 17, 'Short and pointy.', 7)
+        self.sword = Weapon('Sword', 7, 30, 'Medium length and pointy.', 12)
+        
         # create some items
-        self.spear = Item('Spear', 5.4, 15, "Long and pointy.")
-        self.dagger = Item('Dagger', 2.0, 17, 'Short and pointy.')
         self.cloak = Item('Cloak', 3, 20, 'This will keep you warm.')
-        self.sword = Item('Sword', 7, 30, 'Medium length and pointy.')
-        self.shield = Item('Shield', 5, 15, 'This will keep you safe.')
+        self.torch = Item('Torch', 2, 3, 'This will light the way')
 
 
     def handle_input(self, player):
