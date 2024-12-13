@@ -64,6 +64,7 @@ class Entity:
         else:
             self.current_health += amount
 
+
     def get_max_hit(self):
         return self.max_hit
 
