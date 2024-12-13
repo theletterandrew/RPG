@@ -62,6 +62,4 @@ hagdar = Npc('Hagdar', 5, 50)
 print(hagdar.check_alive())
 
 print(player.get_max_hit())
-player.update_max_hit()
-print(player.get_max_hit())
 print("Attack: " + str(player.attack()))

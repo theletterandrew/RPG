@@ -66,6 +66,7 @@ class Entity:
 
 
     def get_max_hit(self):
+        self.update_max_hit()
         return self.max_hit
 
 
