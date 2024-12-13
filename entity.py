@@ -1,5 +1,7 @@
 from inventory import Inventory
 from weapon import Weapon
+import random
+
 
 class Entity:
     def __init__(self, name, inv_size, max_health):
@@ -9,7 +11,7 @@ class Entity:
         self.max_health = max_health
         self.current_health = self.max_health
         self.alive = True
-        self.active_weapon = self.inventory.get_weapon()
+        self.max_hit = 5
     
 
     def get_name(self):
@@ -24,10 +26,6 @@ class Entity:
         return self.inventory
 
 
-    def get_active_weapon(self):
-        return self.active_weapon
-
-
     def print_inventory(self):
         print('-----Inventory-----')
         for item in self.inventory.get_contents():
@@ -36,7 +34,7 @@ class Entity:
             print('Weight: ' + str(item.get_weight()))
             print('Value: ' + str(item.get_value()))
             if isinstance(item, Weapon):
-                print('Max Hit ' + str(item.get_max_hit()))
+                print('Max Hit: ' + str(item.get_max_hit()))
             print('--------------------')
 
 
@@ -66,4 +64,13 @@ class Entity:
         else:
             self.current_health += amount
 
-            
+    def get_max_hit(self):
+        return self.max_hit
+
+
+    def update_max_hit(self):
+        self.max_hit = self.inventory.get_weapon().get_max_hit()
+
+    
+    def attack(self):
+        return random.randint(0, self.get_max_hit())
