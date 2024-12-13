@@ -1,4 +1,5 @@
 from item import Item
+from weapon import Weapon
 from player import Player
 from npc import Npc
 
@@ -64,3 +65,5 @@ print(player.get_current_health())
 # Create a new NPC
 hagdar = Npc('Hagdar', 5, 50)
 print(hagdar.check_alive())
+
+print(player.inventory.get_weapon())

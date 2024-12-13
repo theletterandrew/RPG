@@ -1,4 +1,5 @@
 from inventory import Inventory
+from weapon import Weapon
 
 class Entity:
     def __init__(self, name, inv_size, max_health):
@@ -8,15 +9,24 @@ class Entity:
         self.max_health = max_health
         self.current_health = self.max_health
         self.alive = True
+        self.active_weapon = self.inventory.get_weapon()
     
+
     def get_name(self):
         return self.name
     
+
     def set_name(self, name):
         self.name = name
 
+
     def get_inventory(self):
         return self.inventory
+
+
+    def get_active_weapon(self):
+        return self.active_weapon
+
 
     def print_inventory(self):
         print('-----Inventory-----')
@@ -25,16 +35,22 @@ class Entity:
             print('Description: ' + item.get_description())
             print('Weight: ' + str(item.get_weight()))
             print('Value: ' + str(item.get_value()))
+            if isinstance(item, Weapon):
+                print('Max Hit ' + str(item.get_max_hit()))
             print('--------------------')
+
 
     def get_max_health(self):
         return self.max_health
 
+
     def get_current_health(self):
         return self.current_health
     
+
     def check_alive(self):
         return self.alive
+
 
     def sub_health(self, amount):
         if amount > self.get_current_health():
@@ -43,8 +59,11 @@ class Entity:
         else:
             self.current_health -= amount
 
+
     def add_health(self, amount):
         if amount + self.get_current_health() >= self.get_max_health():
             self.current_health = self.max_health
         else:
             self.current_health += amount
+
+            

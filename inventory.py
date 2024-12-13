@@ -1,3 +1,5 @@
+from weapon import Weapon
+
 class Inventory:
     def __init__(self, size):
         self.contents = {}
@@ -57,3 +59,8 @@ class Inventory:
             return None
         else:
             return self.contents[item]
+    
+    def get_weapon(self):
+        for item in self.get_contents():
+            if isinstance(item, Weapon):
+                return item

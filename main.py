@@ -24,6 +24,7 @@ player = Player(player_name, 5, 100, player_class)
 # Add starter items to player inventory
 player.inventory.add_item(game.dagger)
 player.inventory.add_item(game.cloak)
+player.inventory.add_item(game.torch)
 
 
 # game loop
