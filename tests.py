@@ -2,6 +2,7 @@ from item import Item
 from weapon import Weapon
 from player import Player
 from npc import Npc
+from battle import Battle
 
 
 # Create some items---------------------
@@ -63,3 +64,9 @@ print(hagdar.check_alive())
 
 print(player.get_max_hit())
 print("Attack: " + str(player.attack()))
+
+print(hagdar.get_max_hit())
+
+battle = Battle(player, hagdar)
+
+battle.battle_loop()

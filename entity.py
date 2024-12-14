@@ -71,7 +71,10 @@ class Entity:
 
 
     def update_max_hit(self):
-        self.max_hit = self.inventory.get_weapon().get_max_hit()
+        if self.inventory.get_weapon() == None:
+            return self.max_hit
+        else:
+            self.max_hit = self.inventory.get_weapon().get_max_hit()
 
     
     def attack(self):
