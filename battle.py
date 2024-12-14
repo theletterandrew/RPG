@@ -6,6 +6,7 @@ class Battle:
         self.player = player
         self.opponent = opponent
 
+
     def battle_loop(self):
         while self.player.check_alive() and self.opponent.check_alive():
 

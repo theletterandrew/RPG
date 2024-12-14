@@ -1,5 +1,7 @@
 from item import Item
 from weapon import Weapon
+from npc import Npc
+from player import Player
 
 class Game:
 
@@ -15,7 +17,7 @@ class Game:
 
 
     def handle_input(self, player):
-        commands = ['inventory', 'health', 'help', 'quit']
+        commands = ['fight', 'inventory', 'health', 'help', 'quit',]
         print('What do you want to do? type help for more info.')
         command = input('> ')
         if command not in commands:
@@ -26,10 +28,13 @@ class Game:
             print(commands)
 
         elif command == 'quit':
-            return 0
+            return 'quit'
 
         elif command == 'inventory':
             player.print_inventory()
 
         elif command == 'health':
             print(player.get_current_health())
+            
+        elif command == 'fight':
+            return 'fight'
